@@ -81,19 +81,20 @@ nav h2 {
     display: none;
 }
 h2 {
-    font-size: 1.9em;
-    font-weight: 800;
-    padding: 1.2em .5em;
+    font-size: 2.2em;
+    font-weight: 700;
+    padding: 1em .5em;
 }
 h3 {
     font-size: 1.5em;
     font-weight: 700;
-    padding: .7em;
+    padding: 1em .5em;
     line-height: 1.5em;
 }
 p {
     line-height: 1.3em;
     font-size: 1.1em;
+    margin-left: 5px;
 }
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
 #innovation {
@@ -105,6 +106,9 @@ p {
     padding: 1rem;
     overflow: hidden;
     color: var(--white);
+}
+#innovation a {
+
 }
 #expertise, #offer {
     background-color: var(--white);
@@ -125,8 +129,50 @@ p {
 #offer {
     padding-bottom: 2em;
 }
+#offer h3 {
+    padding: 0.5em 0.3em;
+}
 #contact, footer {
     background-color: var(--black);
+}
+#results h3 {
+    font-size: 1.9em;
+}
+#results {
+    padding-bottom: 1.2em;
+}
+table {
+    justify-self: center;
+    width: 95%;
+    background-color: var(--black);
+}
+th, td {
+    padding: 20px;
+    border: 1px solid var(--charcoal);
+    text-align: center;
+}
+tr:nth-child(even) {
+    background-color: var(--charcoal);
+}
+#contact p {
+    margin: 0 1em;
+}
+form {
+    margin-top: 1em;
+}
+label {
+    display: block;
+    font-size: .9em;
+}
+input[type=text], input[type=email], textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 3px solid var(--blue);
+}
+textarea {
+    resize: vertical;
 }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
@@ -161,7 +207,7 @@ h1 {
     background: var(--charcoal);
     border-radius: 10px;
     position: relative;
-    transition: ;
+    /* transition: ; */
     height: 0;
 }
 /* THIS ONE IS DONE FOR YOU */

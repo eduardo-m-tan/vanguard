@@ -12,13 +12,17 @@
     <body>
         <header>
             <h1>Vanguard</h1>
-        </header>
-        <nav>
+            <nav>
             <h2>Main Navigation</h2>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#contact">Contact</a>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle"><span></span></label>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>   
         </nav>
+        </header>
         <main>
             <section id="innovation">
                 <div class="container">
@@ -26,8 +30,8 @@
                     <p>
                         We empower businesses to lead the future with high-impact strategies, 
                         market intelligence, and financial solutions that drive success.
-                        <a href="">Request a Consultation</a>
                     </p>
+                    <a href="#contact">Request a Consultation</a>
                 </div>
             </section>
             <section id="expertise">
@@ -159,8 +163,8 @@
                             <input type="text" id="industry" name="industry" required>
                         </p>
                         <p>
-                            <label for="details">Full Name</label>
-                            <textarea id="details" name="details" required></textarea>
+                            <label for="details">How can we help you?</label>
+                            <textarea id="details" rows="5" name="details" required></textarea>
                         </p>
                         <button>Submit</button>
                     </form>
