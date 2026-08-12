@@ -242,7 +242,7 @@ nav input:checked ~ label:not(.steps) span:before, nav input:checked ~ label:not
 }
 table {
     justify-self: center;
-    width: 90%;
+    width: 100%;
     background-color: var(--black);
 }
 th {
@@ -301,7 +301,7 @@ form {
 }
 label {
     display: block;
-    font-size: .8em;
+    font-size: .9em;
 }
 input[type=text], input[type=email], textarea, input[type=submit] {
     box-sizing: border-box;
@@ -317,11 +317,11 @@ input[type=submit] {
     border-style: none;
     margin: 12px 0;
     display: block;
-    width: 95%;
+    width: 100%;
     justify-self: center;
     background-color: var(--blue);
     color: var(--white);
-    font-size: .9em;
+    font-size: 1.1em;
     font-weight: 700;
     border-radius: 8px;
     cursor: pointer;
@@ -366,14 +366,14 @@ h2, h3, #innovation a, input[type=submit] {
 }
 #innovation a:hover, input[type=submit]:hover {
     background-color: var(--red);
-    font-size: 1.1em;
+    font-size: 1.3em;
 }
 #services section {
     transition: transform 0.5s, box-shadow 0.5s ease-in-out;
 }
 #services section:hover {
-    transform: translate(-2px, -12px);
-    box-shadow: 3px 3px 3px black;
+    transform: translate(-3px, -9px);
+    box-shadow: 3px 9px 3px black;
 }
 @keyframes stepUp {
     0% {
@@ -388,26 +388,83 @@ h2, h3, #innovation a, input[type=submit] {
     animation: stepUp 1s ease-in-out forwards;
 }
 
-
 /* MEDIA QUERIES (MEDIUM) */ 
 @media screen and (min-width: 800px) {
-    #results {
+    body {
+        font-size-adjust: .65;
+    }
+    h2 {
+        padding: 1.3em .5em 1.1em;
+    }
+    nav ul {
+        overflow: visible;
+        position: absolute;
+        top: 1.4em;
+        right: 1em;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    nav li a {
+        width: 125px;
+        font-size: 1.1em;
+    }
+    nav label span, nav input {
+        display: none;
+    }
+    .services-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        column-gap: 1em;
+    }
+    #services h3 {
+        padding: .5em 1em 1em .5em;
     }
     .results-container {
+        display: flex;
         flex-direction: row;
         justify-content: space-between;
+        gap: 1.5em;
     }
-    .results-table {
-        width: 50%;
-    }
-    .bar-chart {
+    .results-table, .bar-chart {
         width: 50%;
     }
 }
 
 /* MEDIA QUERIES (LARGE) */
 @media screen and (min-width: 1024px) {
-
+    body {
+        font-size-adjust: .8;
+    }
+    h2 {
+        padding: 1.7em .5em 1.3em;
+    }
+    p {
+        line-height: 2.5em;
+    }
+    nav ul {
+        top: 1.8em;
+    }
+    #innovation p {
+        margin: 1em 0 2.5em; 
+    }
+    #innovation > .container {
+        max-width: 1000px;
+    }
+    .services-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    #services h3 {
+        padding: .5em 1em 1.2em .5em;
+        line-height: 1.9em;
+    }
+    .results-container {
+        gap: 2em;
+    }
+    #contact form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    #contact input[type=submit] {
+        margin-top: 2em;
+    }
 }
