@@ -80,7 +80,7 @@ body {
 h1 {
     font-size: 1.5em;
     font-weight: 800;
-    text-indent: 2.2em;
+    text-indent: 2.3em;
     padding-top: 1em;
     color: var(--blue);
     margin-left: .2em;
@@ -122,7 +122,7 @@ nav h2 {
 }
 nav li a {
     display: block;
-    width: 150px;
+    width: 175px;
     font-size: 1.2rem;
     padding: 1rem;
     text-transform: uppercase;
@@ -221,20 +221,18 @@ nav input:checked ~ label:not(.steps) span:before, nav input:checked ~ label:not
     background-color: var(--blue);
     color: var(--white);
 }
+#services {
+    padding-bottom: 2em;
+}
 #services section {
     border-radius: 10px;
     padding: 1.2em;
     margin-bottom: 1em;
-}
-#services {
-    padding-bottom: 2em;
+    box-shadow: 1px 1px 3px black;
 }
 #services h3 {
     padding: 0 .3em .4em;
     line-height: 1.4em;
-}
-#contact, footer {
-    background-color: var(--black);
 }
 #results h3 {
     font-size: 1.4em;
@@ -258,6 +256,42 @@ th, td {
 }
 tr:nth-child(even) {
     background-color: var(--charcoal);
+}
+/* THIS ONE IS DONE FOR YOU */
+#bar-chart {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: 1rem;
+    height: 300px;
+    width: 100%;
+    max-width: 800px;
+    padding: 1rem;
+    position: relative;
+}
+/* ADD ON TRANSITION ON HEIGHT */
+.bar {
+    width: 50px;
+    background: var(--charcoal);
+    border-radius: 10px;
+    position: relative;
+    transition: height 1s ease-in-out;
+    height: 0;
+}
+/* THIS ONE IS DONE FOR YOU */
+.bar::after {
+    content: attr(data-year);
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--white);
+}
+#contact, footer {
+    background-color: var(--black);
 }
 #contact p {
     margin: 0 1em;
@@ -301,38 +335,45 @@ footer a {
     color: var(--blue);
 }
 
-/* THIS ONE IS DONE FOR YOU */
-#bar-chart {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    align-items: flex-end;
-    justify-content: space-around;
-    gap: 1rem;
-    height: 300px;
-    width: 100%;
-    max-width: 800px;
-    padding: 1rem;
-    position: relative;
+/* Animations, transitions, and transformations */
+@keyframes bobbing {
+    0% {
+        background-position-y: 0px;
+    }
+    100% {
+        background-position-y: 15px;
+    }
 }
-/* ADD ON TRANSITION ON HEIGHT */
-.bar {
-    width: 50px;
-    background: var(--charcoal);
-    border-radius: 10px;
-    position: relative;
-    /* transition: ; */
-    height: 0;
+h1 {
+    animation: bobbing 3s ease-in-out infinite alternate-reverse;
 }
-/* THIS ONE IS DONE FOR YOU */
-.bar::after {
-    content: attr(data-year);
-    position: absolute;
-    bottom: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1rem;
-    font-weight: bold;
-    color: var(--white);
+@keyframes fadeIn {
+    0% {
+        top: -10px;
+        opacity: 0;
+    }
+    100% {
+        top: 0px;
+        opacity: 100%;
+    }
+}
+h2, h3, #innovation a, input[type=submit] {
+    position: relative;
+    animation: fadeIn 1s ease-in;
+}
+#innovation a, input[type=submit] {
+    transition: background-color 0.5s, font-size 0.5s ease-in-out;
+}
+#innovation a:hover, input[type=submit]:hover {
+    background-color: var(--red);
+    font-size: 1.1em;
+}
+#services section {
+    transition: transform 0.5s, box-shadow 0.5s ease-in-out;
+}
+#services section:hover {
+    transform: translate(-2px, -12px);
+    box-shadow: 3px 3px 3px black;
 }
 @keyframes stepUp {
     0% {
@@ -349,8 +390,9 @@ footer a {
 
 
 /* MEDIA QUERIES (MEDIUM) */ 
-
+@media screen and (min-width: 800px) {
     #results {
+        display: grid;
         grid-template-columns: 1fr 1fr;
     }
     .results-container {
@@ -363,6 +405,9 @@ footer a {
     .bar-chart {
         width: 50%;
     }
-
+}
 
 /* MEDIA QUERIES (LARGE) */
+@media screen and (min-width: 1024px) {
+
+}
