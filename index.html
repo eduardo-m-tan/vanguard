@@ -10,19 +10,21 @@
     <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <header>
-            <h1>Vanguard</h1>
+        <div class="headerNav">
+            <header>
+                <h1>Vanguard</h1>
+            </header>
             <nav>
-            <h2>Main Navigation</h2>
-            <input type="checkbox" id="menu-toggle">
-            <label for="menu-toggle"><span></span></label>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>   
-        </nav>
-        </header>
+                <h2>Main Navigation</h2>
+                <label for="menu-toggle"><span></span></label>
+                <input type="checkbox" id="menu-toggle">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>   
+            </nav>
+        </div>
         <main>
             <section id="innovation">
                 <div class="container">
@@ -36,7 +38,7 @@
                     </p>
                 </div>
             </section>
-            <section id="expertise">
+            <section id="about">
                 <div class="container">
                     <h2>Our Expertise. Your Edge.</h2>
                     <p>
@@ -46,7 +48,7 @@
                     </p>
                 </div>
             </section>
-            <section id="offer">
+            <section id="services">
                 <div class="container">
                     <h2>What We Offer</h2>
                     <section>
@@ -166,7 +168,7 @@
                         </p>
                         <p>
                             <label for="details">How can we help you?</label>
-                            <textarea id="details" rows="5" name="details" required></textarea>
+                            <textarea id="details" rows="4" name="details" required></textarea>
                         </p>
                         <input type="submit" value="Submit">
                     </form>

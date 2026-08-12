@@ -76,28 +76,118 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
-nav h2 {
-    display: none;
+/* ADD FLOATING SVG LOGO BEFORE THE H1 */
+h1 {
+    font-size: 1.5em;
+    font-weight: 800;
+    text-indent: 2.2em;
+    padding-top: 1em;
+    color: var(--blue);
+    margin-left: .2em;
+    width: 3rem;
+    height: 3rem;
+    background: url('images/vanguard-logo.svg') no-repeat center/contain;
 }
 h2 {
-    font-size: 2.2em;
-    font-weight: 700;
-    padding: 1em .5em;
-}
-h3 {
     font-size: 1.5em;
     font-weight: 700;
+    padding: 1em .5em .8em;
+}
+h3 {
+    font-size: 1.1em;
+    font-weight: 700;
     padding: 1em .5em;
-    line-height: 1.5em;
 }
 p {
-    line-height: 1.3em;
-    font-size: 1.1em;
-    margin-left: 5px;
+    font-size: .8em;
+    line-height: 1.5em;
 }
+/* SECTIONS USED FOR NAV HAMBURGER */
+.headerNav {
+    margin: 0 .4em .4em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+    max-height: 0;
+}
+nav h2 {
+    visibility: hidden;
+    height: 1px;
+}
+nav li a {
+    display: block;
+    width: 150px;
+    font-size: 1.2rem;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--blue);
+    transition: background-color .3s ease-in;
+    float: right;
+}
+nav a:hover, nav input:hover {
+    background-color: var(--blue);
+    color: var(--black);
+}
+nav label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 2rem 2.5rem 0;
+    user-select: none;
+    margin-left: 14em;
+}
+nav label span {
+    background-color: var(--white);
+    display: block;
+    height: .2rem;
+    position: relative;
+    transition: background-color .3s ease-out;
+    width: 1.5rem;
+}
+nav label span:before, nav label span:after {
+    background-color: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+nav label span:before {
+    top: .5rem;
+}
+nav label span:after {
+    top: -.5rem;
+}
+nav input {
+    display: none;
+}
+nav input:checked ~ ul {
+    max-height: 500px;
+}
+nav input:checked ~ label span {
+    background: transparent;
+}
+nav input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+nav input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+nav input:checked ~ label:not(.steps) span:before, nav input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
+
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
 #innovation {
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
+    background: linear-gradient(var(--blue), rgba(0, 0, 0, 0.75) 1%), url('images/vanguard-hero.jpg') no-repeat center center/cover;
     height: 80vh;
     display: grid;
     place-items: center;
@@ -107,55 +197,64 @@ p {
     color: var(--white);
 }
 #innovation p {
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 }
 #innovation a {
     background-color: var(--blue);
     color: var(--white);
     padding: 1em;
+    font-weight: 700;
     border-radius: 10px;
     text-decoration: none;
 }
-#expertise, #offer {
+#innovation > .container {
+    backdrop-filter: blur(10px);
+}
+#about, #services {
     background-color: var(--white);
     color: var(--black);
 }
-#expertise p {
+#about p {
     font-weight: 550;
 }
-#offer section, #results {
+#services section, #results {
     background-color: var(--blue);
     color: var(--white);
 }
-#offer section {
+#services section {
     border-radius: 10px;
-    padding: 1.5em;
+    padding: 1.2em;
     margin-bottom: 1em;
 }
-#offer {
+#services {
     padding-bottom: 2em;
 }
-#offer h3 {
-    padding: 0.5em 0.3em;
+#services h3 {
+    padding: 0 .3em .4em;
+    line-height: 1.4em;
 }
 #contact, footer {
     background-color: var(--black);
 }
 #results h3 {
-    font-size: 1.9em;
+    font-size: 1.4em;
 }
 #results {
     padding-bottom: 1.2em;
 }
 table {
     justify-self: center;
-    width: 95%;
+    width: 90%;
     background-color: var(--black);
 }
+th {
+    font-weight: 600;
+}
 th, td {
-    padding: 20px;
+    padding: 15px;
     border: 1px solid var(--charcoal);
     text-align: center;
+    font-size: .8em;
 }
 tr:nth-child(even) {
     background-color: var(--charcoal);
@@ -168,28 +267,29 @@ form {
 }
 label {
     display: block;
-    font-size: .9em;
+    font-size: .8em;
 }
 input[type=text], input[type=email], textarea, input[type=submit] {
     box-sizing: border-box;
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     margin-bottom: 16px;
-    border: 3px solid var(--blue);
+    border: 2px solid var(--blue);
 }
 textarea {
     resize: vertical;
 }
 input[type=submit] {
-    margin: 16px 0;
+    border-style: none;
+    margin: 12px 0;
     display: block;
-    width: 93%;
+    width: 95%;
     justify-self: center;
     background-color: var(--blue);
     color: var(--white);
-    font-size: 1.2em;
+    font-size: .9em;
     font-weight: 700;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
 }
 footer {
@@ -201,20 +301,6 @@ footer a {
     color: var(--blue);
 }
 
-
-/* ADD FLOATING SVG LOGO BEFORE THE H1 */
-h1 {
-    margin: .4em;
-    font-size: 2.3em;
-    font-weight: 800;
-    text-indent: 2em;
-    padding-top: .6em;
-    color: var(--blue);
-    left:-.5rem;
-    width: 3.75rem;
-    height: 3.75rem;
-    background: url('images/vanguard-logo.svg') no-repeat center/contain;
-}
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
     display: grid;
